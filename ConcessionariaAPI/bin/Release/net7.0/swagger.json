@@ -1,0 +1,187 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ConcessionariaAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Concessionaria": {
+      "get": {
+        "tags": [
+          "Concessionaria"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Carro"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Concessionaria"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Carro"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Carro"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Concessionaria"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Carro"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Carro"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Concessionaria/{id}": {
+      "get": {
+        "tags": [
+          "Concessionaria"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Carro"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Concessionaria"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Carro"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Carro": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "marca": {
+          "type": "string"
+        },
+        "cor": {
+          "type": "string"
+        },
+        "categoria": {
+          "type": "string"
+        },
+        "ano": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "valor": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
